@@ -1,0 +1,7 @@
+langchain==0.3.14
+langchain-community==0.3.14
+langchain-openai==0.2.14
+langgraph==0.2.61
+more-itertools==10.5.0
+python-dotenv==1.0.1
+trino[sqlalchemy]==0.331.0
