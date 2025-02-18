@@ -1,7 +1,10 @@
-langchain==0.3.14
-langchain-community==0.3.14
-langchain-openai==0.2.14
-langgraph==0.2.61
-more-itertools==10.5.0
-python-dotenv==1.0.1
-trino[sqlalchemy]==0.331.0
+langchain~=0.3.19
+langchain_core~=0.3.36
+langchain-community~=0.3.17
+langchain-openai~=0.3.6
+langgraph~=0.2.73
+llm~=0.22
+more-itertools~=10.6.0
+openai~=1.59.7
+python-dotenv~=1.0.1
+trino[sqlalchemy]~=0.333.0
