@@ -9,11 +9,16 @@ There are currently two notebooks:
 
 ## Configuration
 
+You must configure the notebook(s) with your API credential(s). You can either set environment variables or use a `.env` 
+file. To do the latter, copy `.env.template` to `.env`, then set the relevant API key(s) as explained below.
+
+Remember - never put secrets in source code!
+
 ### OpenAI
 
 To use the OpenAI API, you must [sign up for an OpenAI account](https://platform.openai.com/signup) and [create an OpenAI API key](https://platform.openai.com/api-keys).
 
-Copy `.env.template` to `.env`, then edit it to include your Open AI API key:
+Either set an environment variable, or edit your `.env` file:
 
 ``` dotenv
 OPENAI_API_KEY=<your-openai-api-key>
@@ -23,7 +28,7 @@ OPENAI_API_KEY=<your-openai-api-key>
 
 To use the DeepSeek API, you must [sign up for a DeepSeek account](https://platform.deepseek.com/sign_up) and [create a DeepSeek API key](https://platform.deepseek.com/api_keys).
 
-Copy `.env.template` to `.env`, then edit it to include your DeepSeek API key:
+Either set an environment variable, or edit your `.env` file:
 
 ``` dotenv
 DEEPSEEK_API_KEY=<your-deepseek-api-key>
