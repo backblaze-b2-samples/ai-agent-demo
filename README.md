@@ -9,10 +9,30 @@ There are currently two notebooks:
 
 ## Configuration
 
-You must configure the notebook(s) with your API credential(s). You can either set environment variables or use a `.env` 
-file. To do the latter, copy `.env.template` to `.env`, then set the relevant API key(s) as explained below.
+You must configure the notebook(s) with your API credential(s). You can either set environment variables or use a `.env`
+file. To do the latter, copy `.env.example` to `.env`, then replace the placeholder values with your real keys.
+The `.env.example` file is the canonical reference for variable names and placeholder format.
+The `.env.template` file is retained as a backwards-compatible alias for older setup instructions and must stay
+byte-for-byte identical to `.env.example`.
 
 Remember - never put secrets in source code!
+
+### Backblaze B2
+
+This demo queries the public Drive Stats database through Trino and does not instantiate a B2 client directly. The
+repository still ships the standard Backblaze B2 sample environment names for consistency across sample repos and for
+downstream adaptations that read or write B2 objects:
+
+``` dotenv
+B2_APPLICATION_KEY_ID=your_application_key_id
+B2_APPLICATION_KEY=your_application_key
+B2_BUCKET_NAME=your_bucket_name
+B2_REGION=your_b2_region
+B2_PUBLIC_URL_BASE=
+```
+
+If you adapt the notebooks to use B2 object storage directly, use the S3-compatible API as the default and set a
+custom user agent on every S3 client that includes `(backblaze-b2-samples)`.
 
 ### OpenAI
 
@@ -21,7 +41,7 @@ To use the OpenAI API, you must [sign up for an OpenAI account](https://platform
 Either set an environment variable, or edit your `.env` file:
 
 ``` dotenv
-OPENAI_API_KEY=<your-openai-api-key>
+OPENAI_API_KEY=your_openai_api_key
 ```
 
 ### DeepSeek
@@ -31,7 +51,7 @@ To use the DeepSeek API, you must [sign up for a DeepSeek account](https://platf
 Either set an environment variable, or edit your `.env` file:
 
 ``` dotenv
-DEEPSEEK_API_KEY=<your-deepseek-api-key>
+DEEPSEEK_API_KEY=your_deepseek_api_key
 ```
 
 # Running the Notebooks
