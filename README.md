@@ -10,7 +10,8 @@ There are currently two notebooks:
 ## Configuration
 
 You must configure the notebook(s) with your API credential(s). You can either set environment variables or use a `.env`
-file. To do the latter, copy `.env.example` to `.env`, then set the relevant API key(s) as explained below.
+file. To do the latter, copy `.env.example` to `.env`, then replace the placeholder values with your real keys.
+The `.env.example` file is the canonical reference for variable names and placeholder format.
 The `.env.template` file is retained as a backwards-compatible alias for older setup instructions and must stay
 byte-for-byte identical to `.env.example`.
 
@@ -40,7 +41,7 @@ To use the OpenAI API, you must [sign up for an OpenAI account](https://platform
 Either set an environment variable, or edit your `.env` file:
 
 ``` dotenv
-OPENAI_API_KEY=<your-openai-api-key>
+OPENAI_API_KEY=your_openai_api_key
 ```
 
 ### DeepSeek
@@ -50,7 +51,7 @@ To use the DeepSeek API, you must [sign up for a DeepSeek account](https://platf
 Either set an environment variable, or edit your `.env` file:
 
 ``` dotenv
-DEEPSEEK_API_KEY=<your-deepseek-api-key>
+DEEPSEEK_API_KEY=your_deepseek_api_key
 ```
 
 # Running the Notebooks
