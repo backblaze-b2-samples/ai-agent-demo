@@ -2,6 +2,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+ENV_SAMPLE_FILES = (".env.example", ".env.template")
 STANDARD_B2_KEYS = {
     "B2_APPLICATION_KEY_ID",
     "B2_APPLICATION_KEY",
@@ -10,17 +11,17 @@ STANDARD_B2_KEYS = {
     "B2_PUBLIC_URL_BASE",
 }
 LEGACY_ENV_ALIASES = {
-    "AW" + "S_ACCESS_KEY_ID",
-    "AW" + "S_SECRET_ACCESS_KEY",
-    "B2_" + "ENDPOINT",
-    "B2_" + "KEY_ID",
-    "B2_" + "S3_ENDPOINT",
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "B2_ENDPOINT",
+    "B2_KEY_ID",
+    "B2_S3_ENDPOINT",
 }
 NATIVE_B2_MARKERS = {
-    "b2-" + "native",
-    "b2_" + "upload_file",
-    "b2_" + "get_upload_url",
-    "b2_" + "authorize_account",
+    "b2-native",
+    "b2_upload_file",
+    "b2_get_upload_url",
+    "b2_authorize_account",
 }
 
 
@@ -34,8 +35,15 @@ def _env_keys(path: Path) -> set[str]:
     return keys
 
 
+def test_env_sample_files_stay_in_sync():
+    canonical = (ROOT / ".env.example").read_text(encoding="utf-8")
+    alias = (ROOT / ".env.template").read_text(encoding="utf-8")
+
+    assert alias == canonical
+
+
 def test_env_examples_use_standard_b2_names():
-    for name in (".env.example", ".env.template"):
+    for name in ENV_SAMPLE_FILES:
         keys = _env_keys(ROOT / name)
 
         assert STANDARD_B2_KEYS <= keys

@@ -11,6 +11,8 @@ There are currently two notebooks:
 
 You must configure the notebook(s) with your API credential(s). You can either set environment variables or use a `.env`
 file. To do the latter, copy `.env.example` to `.env`, then set the relevant API key(s) as explained below.
+The `.env.template` file is retained as a backwards-compatible alias for older setup instructions and must stay
+byte-for-byte identical to `.env.example`.
 
 Remember - never put secrets in source code!
 
